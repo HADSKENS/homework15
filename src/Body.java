@@ -9,8 +9,9 @@ public enum Body {
     Van("Фургон"),
     Minivan("Минивэн");
     private String bodyType;
-    Body (String bodyType){
-        this.bodyType=bodyType;
+
+    Body(String bodyType) {
+        this.bodyType = bodyType;
     }
 
     public String getBodyType() {
