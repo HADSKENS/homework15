@@ -3,12 +3,14 @@ public abstract class Transport {
     String model;
     double engineVolume;
     String body;
+    Type type;
 
 
-    public Transport(String brand, String model, double engineVolume) {
+    public Transport(String brand, String model, double engineVolume,Type type) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
+        this.type=type;
     }
 
     @Override
@@ -19,6 +21,9 @@ public abstract class Transport {
                 ", engineVolume=" + engineVolume +
                 '}';
     }
+    public void print(){
+        printType();
+    }
 
     public void move() {
         startMove();
@@ -27,6 +32,7 @@ public abstract class Transport {
     public void finish() {
         finishMove();
     }
+    public abstract void printType();
 
     public abstract void finishMove();
 
@@ -47,8 +53,9 @@ class Cars<DriverLicenseB> extends Transport {
         Body body;
 
     public Cars(String brand, String model, double engineVolume, Body body) {
-        super(brand, model, engineVolume);
+        super(brand, model, engineVolume,Type.Cars);
         this.body = body;
+
     }
 
     @Override
@@ -59,6 +66,9 @@ class Cars<DriverLicenseB> extends Transport {
     @Override
     public void startMove() {
         System.out.println(brand + " Начал движение");
+    }
+    public void printType(){
+        System.out.println(type);
     }
 
     public void PitStop() {
@@ -84,8 +94,11 @@ class Cars<DriverLicenseB> extends Transport {
     }
 }
     class Truck<DriverLicenseC> extends Transport {
-        public Truck(String brand, String model, double engineVolume) {
-            super(brand, model, engineVolume);
+        LoadCapacity loadCapacity;
+
+        public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
+            super(brand, model, engineVolume,Type.Truck);
+            this.loadCapacity = loadCapacity;
         }
 
         @Override
@@ -108,12 +121,49 @@ class Cars<DriverLicenseB> extends Transport {
 
         public void HighSpeed() {
             System.out.println(brand + " Развил максимальную скорость в размере " + engineVolume * 24);
+        }
+
+        @Override
+        public String toString() {
+            if (loadCapacity.rightScore==null & loadCapacity.leftScore == 12.0) {
+                return "Truck{" +
+                        "loadCapacity свыше " + loadCapacity.leftScore +" тонн "+
+                        ", brand='" + brand + '\'' +
+                        ", model='" + model + '\'' +
+                        ", engineVolume=" + engineVolume +
+                        '}';
+            }
+            if (loadCapacity.rightScore==null & loadCapacity.leftScore== 3.5){
+                return "Truck{" +
+                        "loadCapacity до " + loadCapacity.leftScore +" тонн "+
+                        ", brand='" + brand + '\'' +
+                        ", model='" + model + '\'' +
+                        ", engineVolume=" + engineVolume +
+                        '}';
+            }
+            else {
+                return "Truck{" +
+                        "loadCapacity от " + loadCapacity.rightScore +" тонн, до "+loadCapacity.leftScore+" тонн, "+
+                        ", brand='" + brand + '\'' +
+                        ", model='" + model + '\'' +
+                        ", engineVolume=" + engineVolume +
+                        '}';
+            }
+
+        }
+
+        @Override
+        public void printType() {
+            System.out.println(type);
         }
     }
 
+
     class Bus<DriverLicenseD> extends Transport {
-        public Bus(String brand, String model, double engineVolume) {
-            super(brand, model, engineVolume);
+    Capacity capacity;
+        public Bus(String brand, String model, double engineVolume,Capacity capacity) {
+            super(brand, model, engineVolume,Type.Bus);
+            this.capacity=capacity;
         }
 
         @Override
@@ -136,6 +186,31 @@ class Cars<DriverLicenseB> extends Transport {
 
         public void HighSpeed() {
             System.out.println(brand + " Развил максимальную скорость в размере " + engineVolume * 24);
+        }
+
+        @Override
+        public String toString() {
+            if(capacity.capacityLeft==null){
+                return "Bus{" +
+                        "capacity до " + capacity.capasityRight +
+                        ", brand='" + brand + '\'' +
+                        ", model='" + model + '\'' +
+                        ", engineVolume=" + engineVolume +
+                        '}';
+            }
+            else {
+                return "Bus{" +
+                        "capacity от " + capacity.capacityLeft +" до "+capacity.capasityRight+
+                        ", brand='" + brand + '\'' +
+                        ", model='" + model + '\'' +
+                        ", engineVolume=" + engineVolume +
+                        '}';
+            }
+        }
+
+        @Override
+        public void printType() {
+            System.out.println(type);
         }
     }
 
