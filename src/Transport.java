@@ -1,16 +1,14 @@
 public abstract class Transport {
     String brand;
-    String model;
-    double engineVolume;
-    String body;
-    Type type;
+     String model;
+     double engineVolume;
+     String body;
 
 
-    public Transport(String brand, String model, double engineVolume, Type type) {
+    public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
-        this.type = type;
     }
 
     @Override
@@ -49,10 +47,20 @@ interface Competitive {
 
 class Cars<DriverLicenseB> extends Transport {
     Body body;
+    Type type;
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
 
     public Cars(String brand, String model, double engineVolume, Body body) {
-        super(brand, model, engineVolume, Type.Cars);
+        super(brand, model, engineVolume);
         this.body = body;
+        this.type=Type.Cars;
 
     }
 
@@ -90,10 +98,21 @@ class Cars<DriverLicenseB> extends Transport {
 
 class Truck<DriverLicenseC> extends Transport {
     LoadCapacity loadCapacity;
+    Type type;
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
 
     public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
-        super(brand, model, engineVolume, Type.Truck);
+        super(brand, model, engineVolume);
         this.loadCapacity = loadCapacity;
+        this.type=Type.Truck;
+
     }
 
     @Override
@@ -140,10 +159,21 @@ class Truck<DriverLicenseC> extends Transport {
 
 class Bus<DriverLicenseD> extends Transport {
     Capacity capacity;
+    Type type;
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
 
     public Bus(String brand, String model, double engineVolume, Capacity capacity) {
-        super(brand, model, engineVolume, Type.Bus);
+        super(brand, model, engineVolume);
         this.capacity = capacity;
+        this.type=Type.Bus;
+
     }
 
     @Override
