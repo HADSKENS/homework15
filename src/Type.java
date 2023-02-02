@@ -1,5 +1,3 @@
 public enum Type {
-    Cars,
-    Truck,
-    Bus;
+    Cars, Truck, Bus;
 }

@@ -1,8 +1,8 @@
 public abstract class Transport {
     String brand;
-     String model;
-     double engineVolume;
-     String body;
+    String model;
+    double engineVolume;
+    String body;
 
 
     public Transport(String brand, String model, double engineVolume) {
@@ -10,6 +10,12 @@ public abstract class Transport {
         this.model = model;
         this.engineVolume = engineVolume;
     }
+
+    public void Diagnostics() {
+        getDiagnostics();
+    }
+
+    public abstract void getDiagnostics();
 
     @Override
     public String toString() {
@@ -60,8 +66,15 @@ class Cars<DriverLicenseB> extends Transport {
     public Cars(String brand, String model, double engineVolume, Body body) {
         super(brand, model, engineVolume);
         this.body = body;
-        this.type=Type.Cars;
+        this.type = Type.Cars;
 
+    }
+
+    @Override
+    public void getDiagnostics() {
+        if (type == Type.Cars) {
+            System.out.println("Успешно прошел диагностику");
+        }
     }
 
     @Override
@@ -111,7 +124,7 @@ class Truck<DriverLicenseC> extends Transport {
     public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume);
         this.loadCapacity = loadCapacity;
-        this.type=Type.Truck;
+        this.type = Type.Truck;
 
     }
 
@@ -135,6 +148,13 @@ class Truck<DriverLicenseC> extends Transport {
 
     public void HighSpeed() {
         System.out.println(brand + " Развил максимальную скорость в размере " + engineVolume * 24);
+    }
+
+    @Override
+    public void getDiagnostics() {
+        if (type == Type.Truck) {
+            System.out.println("Успешно прошел диагностику");
+        }
     }
 
     @Override
@@ -172,7 +192,7 @@ class Bus<DriverLicenseD> extends Transport {
     public Bus(String brand, String model, double engineVolume, Capacity capacity) {
         super(brand, model, engineVolume);
         this.capacity = capacity;
-        this.type=Type.Bus;
+        this.type = Type.Bus;
 
     }
 
@@ -196,6 +216,13 @@ class Bus<DriverLicenseD> extends Transport {
 
     public void HighSpeed() {
         System.out.println(brand + " Развил максимальную скорость в размере " + engineVolume * 24);
+    }
+
+    @Override
+    public void getDiagnostics() {
+        if (type == Type.Bus) {
+            System.out.println("Автобусы диагностику проходить не должны");
+        }
     }
 
     @Override

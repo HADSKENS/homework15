@@ -1,7 +1,5 @@
 public enum LoadCapacity {
-    N1(3.5, null),
-    N2(12, 3.5),
-    N3(12, null);
+    N1(3.5, null), N2(12, 3.5), N3(12, null);
     Double rightScore;
     double leftScore;
 

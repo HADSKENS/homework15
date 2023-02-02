@@ -30,5 +30,8 @@ public class Main {
         m.printType();
         a.printType();
         f.printType();
+        a.getDiagnostics();
+        f.getDiagnostics();
+        i.getDiagnostics();
     }
 }
