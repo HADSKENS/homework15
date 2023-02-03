@@ -3,19 +3,26 @@ public abstract class Transport {
     String model;
     double engineVolume;
     String body;
+    Type type;
 
-
-    public Transport(String brand, String model, double engineVolume) {
+    public Transport(String brand, String model, double engineVolume,Type type) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
+        this.type=type;
     }
 
-    public void Diagnostics() {
-        getDiagnostics();
+    public Type getType() {
+        return type;
     }
 
-    public abstract void getDiagnostics();
+    public void getDiagnostics() throws MyException{
+        if (getType()==Type.Bus){
+            throw new MyException();
+        }
+        System.out.println("Диагностика пройдена");
+      }
+
 
     @Override
     public String toString() {
@@ -53,7 +60,6 @@ interface Competitive {
 
 class Cars<DriverLicenseB> extends Transport {
     Body body;
-    Type type;
 
     public Type getType() {
         return type;
@@ -63,18 +69,16 @@ class Cars<DriverLicenseB> extends Transport {
         this.type = type;
     }
 
-    public Cars(String brand, String model, double engineVolume, Body body) {
-        super(brand, model, engineVolume);
+    public Cars(String brand, String model, double engineVolume, Body body,Type type) {
+        super(brand, model, engineVolume,type);
         this.body = body;
-        this.type = Type.Cars;
+
 
     }
 
     @Override
-    public void getDiagnostics() {
-        if (type == Type.Cars) {
-            System.out.println("Успешно прошел диагностику");
-        }
+    public void getDiagnostics() throws MyException {
+        super.getDiagnostics();
     }
 
     @Override
@@ -111,7 +115,6 @@ class Cars<DriverLicenseB> extends Transport {
 
 class Truck<DriverLicenseC> extends Transport {
     LoadCapacity loadCapacity;
-    Type type;
 
     public Type getType() {
         return type;
@@ -121,10 +124,9 @@ class Truck<DriverLicenseC> extends Transport {
         this.type = type;
     }
 
-    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
-        super(brand, model, engineVolume);
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity,Type type) {
+        super(brand, model, engineVolume,type);
         this.loadCapacity = loadCapacity;
-        this.type = Type.Truck;
 
     }
 
@@ -151,10 +153,8 @@ class Truck<DriverLicenseC> extends Transport {
     }
 
     @Override
-    public void getDiagnostics() {
-        if (type == Type.Truck) {
-            System.out.println("Успешно прошел диагностику");
-        }
+    public void getDiagnostics() throws MyException {
+        super.getDiagnostics();
     }
 
     @Override
@@ -179,7 +179,6 @@ class Truck<DriverLicenseC> extends Transport {
 
 class Bus<DriverLicenseD> extends Transport {
     Capacity capacity;
-    Type type;
 
     public Type getType() {
         return type;
@@ -189,10 +188,9 @@ class Bus<DriverLicenseD> extends Transport {
         this.type = type;
     }
 
-    public Bus(String brand, String model, double engineVolume, Capacity capacity) {
-        super(brand, model, engineVolume);
+    public Bus(String brand, String model, double engineVolume, Capacity capacity,Type type) {
+        super(brand, model, engineVolume,type);
         this.capacity = capacity;
-        this.type = Type.Bus;
 
     }
 
@@ -219,10 +217,8 @@ class Bus<DriverLicenseD> extends Transport {
     }
 
     @Override
-    public void getDiagnostics() {
-        if (type == Type.Bus) {
-            System.out.println("Автобусы диагностику проходить не должны");
-        }
+    public void getDiagnostics() throws MyException {
+        super.getDiagnostics();
     }
 
     @Override
