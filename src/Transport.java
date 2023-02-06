@@ -4,12 +4,16 @@ public abstract class Transport {
     double engineVolume;
     String body;
     Type type;
+    Mechanic mechanic;
+    Mechanic mechanic1;
 
-    public Transport(String brand, String model, double engineVolume,Type type) {
+    public Transport(String brand, String model, double engineVolume,Type type,Mechanic mechanic,Mechanic mechanic1) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
         this.type=type;
+        this.mechanic=mechanic;
+        this.mechanic1=mechanic1;
     }
 
     public Type getType() {
@@ -23,6 +27,11 @@ public abstract class Transport {
         System.out.println("Диагностика пройдена");
       }
 
+
+    public Mechanic getMechanics(){
+        System.out.println("Механик 1 "+mechanic+" Механик 2 "+mechanic1);
+        return mechanic;
+    }
 
     @Override
     public String toString() {
@@ -69,8 +78,8 @@ class Cars<DriverLicenseB> extends Transport {
         this.type = type;
     }
 
-    public Cars(String brand, String model, double engineVolume, Body body,Type type) {
-        super(brand, model, engineVolume,type);
+    public Cars(String brand, String model, double engineVolume, Body body,Type type,Mechanic mechanic,Mechanic mechanic1) {
+        super(brand, model, engineVolume,type,mechanic,mechanic1);
         this.body = body;
 
 
@@ -124,8 +133,8 @@ class Truck<DriverLicenseC> extends Transport {
         this.type = type;
     }
 
-    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity,Type type) {
-        super(brand, model, engineVolume,type);
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity,Type type,Mechanic mechanic,Mechanic mechanic1) {
+        super(brand, model, engineVolume,type,mechanic,mechanic1);
         this.loadCapacity = loadCapacity;
 
     }
@@ -188,8 +197,8 @@ class Bus<DriverLicenseD> extends Transport {
         this.type = type;
     }
 
-    public Bus(String brand, String model, double engineVolume, Capacity capacity,Type type) {
-        super(brand, model, engineVolume,type);
+    public Bus(String brand, String model, double engineVolume, Capacity capacity,Type type,Mechanic mechanic,Mechanic mechanic1) {
+        super(brand, model, engineVolume,type, mechanic,mechanic1);
         this.capacity = capacity;
 
     }
