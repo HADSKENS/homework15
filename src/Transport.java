@@ -19,18 +19,9 @@ public abstract class Transport {
         this.type = type;
         this.mechanics=mechanics;
     }
-
     public Type getType() {
         return type;
     }
-
-    public void getDiagnostics() throws MyException {
-        if (getType() == Type.Bus) {
-            throw new MyException();
-        }
-        System.out.println("Диагностика пройдена");
-    }
-
 
     public void getMechanics() {
         int i;
@@ -44,6 +35,7 @@ public abstract class Transport {
         return "Transport{" + "brand='" + brand + '\'' + ", model='" + model + '\'' + ", engineVolume=" + engineVolume + '}';
     }
 
+    public abstract void getDiagnostics() throws MyException;
 }
 
 

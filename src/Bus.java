@@ -36,16 +36,16 @@ class Bus<DriverLicenseD> extends Transport {
     }
 
     @Override
-    public void getDiagnostics() throws MyException {
-        super.getDiagnostics();
-    }
-
-    @Override
     public String toString() {
         if (capacity.capacityLeft == null) {
             return "Bus{" + "capacity до " + capacity.capasityRight + ", brand='" + brand + '\'' + ", model='" + model + '\'' + ", engineVolume=" + engineVolume + '}';
         } else {
             return "Bus{" + "capacity от " + capacity.capacityLeft + " до " + capacity.capasityRight + ", brand='" + brand + '\'' + ", model='" + model + '\'' + ", engineVolume=" + engineVolume + '}';
+        }
+    }
+    public void getDiagnostics() throws MyException {
+        if (getType() == Type.Bus) {
+            throw new MyException();
         }
     }
 }

@@ -35,11 +35,6 @@ class Truck<DriverLicenseC> extends Transport {
     }
 
     @Override
-    public void getDiagnostics() throws MyException {
-        super.getDiagnostics();
-    }
-
-    @Override
     public String toString() {
         if (loadCapacity.rightScore == null & loadCapacity.leftScore == 12.0) {
             return "Truck{" + "loadCapacity свыше " + loadCapacity.leftScore + " тонн " + ", brand='" + brand + '\'' + ", model='" + model + '\'' + ", engineVolume=" + engineVolume + '}';
@@ -50,5 +45,9 @@ class Truck<DriverLicenseC> extends Transport {
             return "Truck{" + "loadCapacity от " + loadCapacity.rightScore + " тонн, до " + loadCapacity.leftScore + " тонн, " + ", brand='" + brand + '\'' + ", model='" + model + '\'' + ", engineVolume=" + engineVolume + '}';
         }
 
+    }
+    @Override
+    public void getDiagnostics() {
+        System.out.println("Диагностика пройдена");
     }
 }

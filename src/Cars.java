@@ -15,10 +15,6 @@ class Cars<DriverLicenseB> extends Transport {
         this.body = body;
 
     }
-    @Override
-    public void getDiagnostics() throws MyException {
-        super.getDiagnostics();
-    }
 
     @Override
     public void getMechanics() {
@@ -52,5 +48,8 @@ class Cars<DriverLicenseB> extends Transport {
                 ", type=" + type +
                 ", mechanics=" + mechanics +
                 '}';
+    }
+    public void getDiagnostics() {
+        System.out.println("Диагностика пройдена");
     }
 }

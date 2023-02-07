@@ -13,6 +13,10 @@ public class Main {
         Mechanic h1 = new Mechanic("Петя Петров8", "АБС");
         Mechanic i1 = new Mechanic("Петя Петров9", "АБС");
         Transport abc = new Transport() {
+            @Override
+            public void getDiagnostics() throws MyException {
+
+            }
         };
         abc.mechanics.add(0,a1);
         abc.mechanics.add(1,b1);
@@ -58,8 +62,8 @@ public class Main {
         for (int n = 0; n < members.size(); n++) {
             System.out.println(members.get(n));
         }
-        ServiceStation.AddQueue(a);
-        ServiceStation.AddQueue(b);
+        ServiceStation.addQueue(a);
+        ServiceStation.addQueue(b);
         a1.ConductMaintenance();
         boolean b3;
         while (b3 = ServiceStation.queue.poll() != null) {
