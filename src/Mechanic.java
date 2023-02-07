@@ -1,16 +1,16 @@
 public class Mechanic {
-    private static String name;
-    private static String company;
+    private String name;
+    private String company;
 
     public Mechanic(String name, String company) {
         this.name = name;
         this.company = company;
     }
-    public static void ConductMaintenance(){
+    public void ConductMaintenance(){
         System.out.println(name+" Провел техобслуживание");
         ServiceStation.queue.remove();
     }
-    public static void RepairCar(){
+    public void RepairCar(){
         System.out.println(name+" Починил автомобиль");
     }
 

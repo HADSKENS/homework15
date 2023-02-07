@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 class Cars<DriverLicenseB> extends Transport {
@@ -22,8 +21,8 @@ class Cars<DriverLicenseB> extends Transport {
     }
 
     @Override
-    public Mechanic getMechanics() {
-        return super.getMechanics();
+    public void getMechanics() {
+        super.getMechanics();
     }
 
     @Override
@@ -54,6 +53,14 @@ class Cars<DriverLicenseB> extends Transport {
 
     @Override
     public String toString() {
-        return "Cars{" + "brand='" + brand + '\'' + ", model='" + model + '\'' + ", engineVolume=" + engineVolume + ", body='" + body.getBodyType() + '\'' + '}';
+        return "Cars{" +
+                "body=" + body +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", body='" + body + '\'' +
+                ", type=" + type +
+                ", mechanics=" + mechanics +
+                '}';
     }
 }

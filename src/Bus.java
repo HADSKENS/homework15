@@ -18,8 +18,8 @@ class Bus<DriverLicenseD> extends Transport {
     }
 
     @Override
-    public Mechanic getMechanics() {
-        return super.getMechanics();
+    public void getMechanics() {
+        super.getMechanics();
     }
 
     @Override

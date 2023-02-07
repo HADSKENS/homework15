@@ -16,9 +16,10 @@ class Truck<DriverLicenseC> extends Transport {
         this.loadCapacity = loadCapacity;
 
     }
+
     @Override
-    public Mechanic getMechanics() {
-        return super.getMechanics();
+    public void getMechanics() {
+        super.getMechanics();
     }
 
     @Override
