@@ -25,16 +25,6 @@ class Cars<DriverLicenseB> extends Transport {
         super.getMechanics();
     }
 
-    @Override
-    public void finishMove() {
-        System.out.println(brand + " Заглушил двигатель");
-    }
-
-    @Override
-    public void startMove() {
-        System.out.println(brand + " Начал движение");
-    }
-
     public void printType() {
         System.out.println(type);
     }

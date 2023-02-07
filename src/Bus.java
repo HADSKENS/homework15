@@ -22,15 +22,6 @@ class Bus<DriverLicenseD> extends Transport {
         super.getMechanics();
     }
 
-    @Override
-    public void finishMove() {
-        System.out.println(brand + " Заглушил двигатель");
-    }
-
-    @Override
-    public void startMove() {
-        System.out.println(brand + " Начал движение");
-    }
 
     public void PitStop() {
         System.out.println(brand + " ушел на Pit-Stop");
@@ -56,10 +47,5 @@ class Bus<DriverLicenseD> extends Transport {
         } else {
             return "Bus{" + "capacity от " + capacity.capacityLeft + " до " + capacity.capasityRight + ", brand='" + brand + '\'' + ", model='" + model + '\'' + ", engineVolume=" + engineVolume + '}';
         }
-    }
-
-    @Override
-    public void printType() {
-        System.out.println(type);
     }
 }

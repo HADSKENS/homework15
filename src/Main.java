@@ -13,20 +13,6 @@ public class Main {
         Mechanic h1 = new Mechanic("Петя Петров8", "АБС");
         Mechanic i1 = new Mechanic("Петя Петров9", "АБС");
         Transport abc = new Transport() {
-            @Override
-            public void printType() {
-
-            }
-
-            @Override
-            public void finishMove() {
-
-            }
-
-            @Override
-            public void startMove() {
-
-            }
         };
         abc.mechanics.add(0,a1);
         abc.mechanics.add(1,b1);

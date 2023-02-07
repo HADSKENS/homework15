@@ -12,7 +12,7 @@ class Truck<DriverLicenseC> extends Transport {
     }
 
     public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity, Type type, List<Mechanic> mechanics) {
-        super(brand, model, engineVolume, type,mechanics);
+        super(brand, model, engineVolume, type, mechanics);
         this.loadCapacity = loadCapacity;
 
     }
@@ -20,16 +20,6 @@ class Truck<DriverLicenseC> extends Transport {
     @Override
     public void getMechanics() {
         super.getMechanics();
-    }
-
-    @Override
-    public void finishMove() {
-        System.out.println(brand + " Заглушил двигатель");
-    }
-
-    @Override
-    public void startMove() {
-        System.out.println(brand + " Начал движение");
     }
 
     public void PitStop() {
@@ -60,10 +50,5 @@ class Truck<DriverLicenseC> extends Transport {
             return "Truck{" + "loadCapacity от " + loadCapacity.rightScore + " тонн, до " + loadCapacity.leftScore + " тонн, " + ", brand='" + brand + '\'' + ", model='" + model + '\'' + ", engineVolume=" + engineVolume + '}';
         }
 
-    }
-
-    @Override
-    public void printType() {
-        System.out.println(type);
     }
 }

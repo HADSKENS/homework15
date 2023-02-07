@@ -44,25 +44,6 @@ public abstract class Transport {
         return "Transport{" + "brand='" + brand + '\'' + ", model='" + model + '\'' + ", engineVolume=" + engineVolume + '}';
     }
 
-    public void print() {
-        printType();
-    }
-
-    public void move() {
-        startMove();
-    }
-
-    public void finish() {
-        finishMove();
-    }
-
-    public abstract void printType();
-
-    public abstract void finishMove();
-
-    public abstract void startMove();
-
-
 }
 
 
