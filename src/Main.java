@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -68,5 +70,10 @@ public class Main {
         cba.conductMaintenance(a1);
         System.out.println();
         a.getMechanics();
+        Map<Transport, List<Mechanic>> carAndMechanics = new HashMap<>();
+        carAndMechanics.put(a,abc.mechanics);
+        System.out.println(a);
+        System.out.println( );
+        System.out.println(carAndMechanics);
     }
 }

@@ -47,7 +47,6 @@ class Cars<DriverLicenseB> extends Transport {
                 ", engineVolume=" + engineVolume +
                 ", body='" + body + '\'' +
                 ", type=" + type +
-                ", mechanics=" + mechanics +
                 '}';
     }
 
