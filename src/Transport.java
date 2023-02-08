@@ -12,13 +12,14 @@ public abstract class Transport {
     public Transport() {
     }
 
-    public Transport(String brand, String model, double engineVolume, Type type,List <Mechanic> mechanics) {
+    public Transport(String brand, String model, double engineVolume, Type type, List<Mechanic> mechanics) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
         this.type = type;
-        this.mechanics=mechanics;
+        this.mechanics = mechanics;
     }
+
     public Type getType() {
         return type;
     }

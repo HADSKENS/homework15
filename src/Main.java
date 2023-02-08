@@ -18,15 +18,15 @@ public class Main {
 
             }
         };
-        abc.mechanics.add(0,a1);
-        abc.mechanics.add(1,b1);
-        abc.mechanics.add(2,c1);
-        abc.mechanics.add(3,d1);
-        abc.mechanics.add(4,e1);
-        abc.mechanics.add(5,f1);
-        abc.mechanics.add(6,g1);
-        abc.mechanics.add(7,h1);
-        abc.mechanics.add(8,i1);
+        abc.mechanics.add(0, a1);
+        abc.mechanics.add(1, b1);
+        abc.mechanics.add(2, c1);
+        abc.mechanics.add(3, d1);
+        abc.mechanics.add(4, e1);
+        abc.mechanics.add(5, f1);
+        abc.mechanics.add(6, g1);
+        abc.mechanics.add(7, h1);
+        abc.mechanics.add(8, i1);
         for (int i = 0; i < abc.mechanics.size(); i++) {
             System.out.println(abc.mechanics.get(i));
         }
@@ -64,7 +64,7 @@ public class Main {
         }
         ServiceStation.addQueue(a);
         ServiceStation.addQueue(b);
-        a1.ConductMaintenance();
+        a1.conductMaintenance();
         boolean b3;
         while (b3 = ServiceStation.queue.poll() != null) {
             System.out.println(b3);

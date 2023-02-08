@@ -2,6 +2,7 @@ import java.util.List;
 
 class Cars<DriverLicenseB> extends Transport {
     Body body;
+
     public Type getType() {
         return type;
     }
@@ -25,15 +26,15 @@ class Cars<DriverLicenseB> extends Transport {
         System.out.println(type);
     }
 
-    public void PitStop() {
+    public void pitStop() {
         System.out.println(brand + " ушел на Pit-Stop");
     }
 
-    public void BestLap() {
+    public void bestLap() {
         System.out.println(brand + " Лучшее время круга " + engineVolume * 10);
     }
 
-    public void HighSpeed() {
+    public void highSpeed() {
         System.out.println(brand + " Развил максимальную скорость в размере " + engineVolume * 24);
     }
 
@@ -49,6 +50,7 @@ class Cars<DriverLicenseB> extends Transport {
                 ", mechanics=" + mechanics +
                 '}';
     }
+
     public void getDiagnostics() {
         System.out.println("Диагностика пройдена");
     }

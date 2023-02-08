@@ -1,4 +1,4 @@
-public class MyException extends Exception{
+public class MyException extends Exception {
     public MyException() {
     }
 

@@ -46,6 +46,7 @@ class Truck<DriverLicenseC> extends Transport {
         }
 
     }
+
     @Override
     public void getDiagnostics() {
         System.out.println("Диагностика пройдена");

@@ -43,6 +43,7 @@ class Bus<DriverLicenseD> extends Transport {
             return "Bus{" + "capacity от " + capacity.capacityLeft + " до " + capacity.capasityRight + ", brand='" + brand + '\'' + ", model='" + model + '\'' + ", engineVolume=" + engineVolume + '}';
         }
     }
+
     public void getDiagnostics() throws MyException {
         if (getType() == Type.Bus) {
             throw new MyException();
