@@ -2,9 +2,17 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class ServiceStation {
-    static Queue<Transport> queue = new LinkedList<>();
+    public ServiceStation() {
+    }
 
-    public static void addQueue(Transport a) {
+    private static Queue<Transport> queue = new LinkedList<>();
+
+    public void addQueue(Transport a) {
         queue.offer(a);
     }
+    public void conductMaintenance(Mechanic a) {
+        System.out.printf("%s Провел техобслуживание%n", a.getName());
+        ServiceStation.queue.remove();
+    }
+
 }

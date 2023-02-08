@@ -62,13 +62,10 @@ public class Main {
         for (int n = 0; n < members.size(); n++) {
             System.out.println(members.get(n));
         }
-        ServiceStation.addQueue(a);
-        ServiceStation.addQueue(b);
-        a1.conductMaintenance();
-        boolean b3;
-        while (b3 = ServiceStation.queue.poll() != null) {
-            System.out.println(b3);
-        }
+        ServiceStation cba = new ServiceStation();
+        cba.addQueue(a);
+        cba.addQueue(b);
+        cba.conductMaintenance(a1);
         System.out.println();
         a.getMechanics();
     }

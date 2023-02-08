@@ -6,11 +6,6 @@ public class Mechanic {
         this.name = name;
         this.company = company;
     }
-
-    public void conductMaintenance() {
-        System.out.println(name + " Провел техобслуживание");
-        ServiceStation.queue.remove();
-    }
     public void repairCar(){
         System.out.println(name+" Починил автомобиль");
     }
