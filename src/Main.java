@@ -81,6 +81,9 @@ public class Main {
         acb.addDrivers(a2);
         acb.addDrivers(b2);
         System.out.println();
-        System.out.println(acb.driversSet);
+        Iterator<Drivers> driversIterator = acb.driversSet.iterator();
+        while (driversIterator.hasNext()){
+            System.out.println(driversIterator.next());
+        }
     }
 }

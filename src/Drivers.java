@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class Drivers {
@@ -11,7 +12,6 @@ public class Drivers {
         this.name = name;
         this.years = years;
     }
-    Drivers test;
     Set<Drivers> driversSet= new HashSet<>();
     public void addDrivers(Drivers a){
         if(driversSet.contains(a)){
