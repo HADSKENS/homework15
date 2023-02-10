@@ -1,6 +1,6 @@
 import java.util.List;
 
-class Bus<DriverLicenseD> extends Transport {
+class Bus extends Transport {
     Capacity capacity;
 
     public Type getType() {

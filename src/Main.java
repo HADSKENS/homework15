@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -75,5 +72,15 @@ public class Main {
         System.out.println(a);
         System.out.println( );
         System.out.println(carAndMechanics);
+        Drivers acb = new Drivers();
+        Drivers a2 =  new Drivers("Пётр",19);
+        Drivers b2 =  new Drivers("Вася",18);
+        acb.addDrivers(a2);
+        acb.addDrivers(b2);
+        System.out.println(acb.driversSet);
+        acb.addDrivers(a2);
+        acb.addDrivers(b2);
+        System.out.println();
+        System.out.println(acb.driversSet);
     }
 }

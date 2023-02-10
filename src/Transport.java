@@ -5,7 +5,6 @@ public abstract class Transport {
     String brand;
     String model;
     double engineVolume;
-    String body;
     Type type;
     public List<Mechanic> mechanics = new ArrayList<>();
 
