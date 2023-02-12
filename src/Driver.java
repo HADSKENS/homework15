@@ -1,25 +1,15 @@
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
-public class Drivers {
+public class Driver {
     private String name;
     private int years;
-    public Drivers() {
+    public Driver() {
     }
 
-    public Drivers(String name, int years) {
+    public Driver(String name, int years) {
         this.name = name;
         this.years = years;
-    }
-    Set<Drivers> driversSet= new HashSet<>();
-    public void addDrivers(Drivers a){
-        if(driversSet.contains(a)){
-            return;
-        }
-        else {
-            driversSet.add(a);
-        }
     }
 
     @Override
@@ -30,3 +20,4 @@ public class Drivers {
                 '}';
     }
 }
+

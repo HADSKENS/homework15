@@ -1,6 +1,21 @@
+import jdk.internal.module.ModuleHashesBuilder;
+
 import java.util.*;
 
 public class Main {
+    Set<Driver> driverSet= new HashSet<>();
+    public void addDrivers(Driver a){
+        if (driverSet.contains(a)){
+            return;
+        }
+        else {
+            driverSet.add(a);
+        }
+    }
+
+    public Main() {
+    }
+
     public static void main(String[] args) {
         Mechanic a1 = new Mechanic("Вася Пупкин1", "АБС");
         Mechanic b1 = new Mechanic("Петя Петров2", "АБС");
@@ -72,16 +87,17 @@ public class Main {
         System.out.println(a);
         System.out.println( );
         System.out.println(carAndMechanics);
-        Drivers acb = new Drivers();
-        Drivers a2 =  new Drivers("Пётр",19);
-        Drivers b2 =  new Drivers("Вася",18);
+
+        Driver a2 =  new Driver("Пётр",19);
+        Driver b2 =  new Driver("Вася",18);
+        Main acb = new Main();
         acb.addDrivers(a2);
         acb.addDrivers(b2);
-        System.out.println(acb.driversSet);
+        System.out.println(acb.driverSet);
         acb.addDrivers(a2);
         acb.addDrivers(b2);
         System.out.println();
-        Iterator<Drivers> driversIterator = acb.driversSet.iterator();
+        Iterator<Driver> driversIterator = acb.driverSet.iterator();
         while (driversIterator.hasNext()){
             System.out.println(driversIterator.next());
         }
