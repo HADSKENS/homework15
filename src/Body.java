@@ -9,5 +9,4 @@ public enum Body {
     public String getBodyType() {
         return bodyType;
     }
-
 }
